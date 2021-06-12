@@ -1,0 +1,17 @@
+# docker run --name sqlserver -e ACCEPT_EULA=Y -e SA_PASSWORD=<> -p 1433:1433 -d mcr.microsoft.com/mssql/server:latest
+# https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-configure?view=sql-server-ver15&pivots=cs1-bash
+
+version: '3.1'
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:latest
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./db/data:/var/opt/mssql/data
+      - ./db/log:/var/opt/mssql/log
+      - ./db/secrets:/var/opt/mssql/secrets
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=<>
+      - TZ=America/New_York
