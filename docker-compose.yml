@@ -1,7 +1,6 @@
 # docker run --name sqlserver -e ACCEPT_EULA=Y -e SA_PASSWORD=<> -p 1433:1433 -d mcr.microsoft.com/mssql/server:latest
 # https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-configure?view=sql-server-ver15&pivots=cs1-bash
 
-version: '3.1'
 services:
   db:
     image: mcr.microsoft.com/mssql/server:latest
