@@ -1,4 +1,5 @@
-# docker run --name sqlserver -e ACCEPT_EULA=Y -e SA_PASSWORD=<> -p 1433:1433 -d mcr.microsoft.com/mssql/server:latest
+# docker run --name sqlserver -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Abcd1234" -e "TZ=America/New_York" -p 1433:1433 --rm mcr.microsoft.com/mssql/server:latest
+# https://hub.docker.com/_/microsoft-mssql-server
 # https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-configure?view=sql-server-ver15&pivots=cs1-bash
 
 services:
@@ -12,5 +13,5 @@ services:
       - ./db/secrets:/var/opt/mssql/secrets
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=<>
+      - SA_PASSWORD=Abcd1234
       - TZ=America/New_York
